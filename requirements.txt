@@ -3,6 +3,7 @@ openai==1.35.3
 python-dotenv==1.0.0
 requests==2.31.0
 pillow==10.3.0
+pytest==8.2.0
 
 # Future modules (not yet required)
 # pyaudio==0.2.13

@@ -231,7 +231,13 @@ def gpt_image(prompt, filename):
         )
         
         image_url = response.data[0].url
-        image_data = requests.get(image_url, timeout=30).content
+        response_get = requests.get(image_url, timeout=30)
+        if response_get.status_code != 200:
+            log.error(
+                f"Image download failed for {filename} with status {response_get.status_code}"
+            )
+            return False
+        image_data = response_get.content
         
         # Save with timestamp in filename
         base_name = filename.replace('.png', '')
