@@ -148,6 +148,7 @@ See `docs/PI_SETUP.md` for full hardware, Docker, directory, and environment det
 * **Images not updating?**
     * Run the script, then restart Home Assistant (`docker restart homeassistant`)
     * Clear browser cache
+    * Check `brain_boost.log` for warnings about failed image generation
 * **Dashboard missing content?**
     * Ensure the correct `dashboard.yaml` is in git and loaded in Home Assistant
 * **Packages missing?**

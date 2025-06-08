@@ -270,7 +270,10 @@ def gpt_image(prompt, filename):
         return True
         
     except Exception as e:
-        log.error(f"Image generation failed for {filename}: {e}")
+        # Log full exception with the prompt that triggered it for easier debugging
+        log.exception(
+            f"Image generation failed for {filename} with prompt '{prompt}': {e}"
+        )
         return False
 
 def fetch_joke():
@@ -371,7 +374,11 @@ def main():
             if content and "[GENERATION FAILED]" not in content:
                 image_name = filename.replace('.txt', '.png')
                 if filename != "word.txt":  # Word already handled
-                    gpt_image(content, image_name)
+                    success = gpt_image(content, image_name)
+                    if not success:
+                        log.warning(
+                            f"Image generation failed for {image_name}."
+                        )
     
     # Update history
     for filename, content in generated_content.items():

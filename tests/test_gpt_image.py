@@ -5,6 +5,9 @@ from pathlib import Path
 
 import pytest
 
+# Skip these tests entirely if the openai package isn't installed
+pytest.importorskip("openai")
+
 
 def _setup_module(monkeypatch, tmp_path):
     root = Path(__file__).resolve().parents[1]
