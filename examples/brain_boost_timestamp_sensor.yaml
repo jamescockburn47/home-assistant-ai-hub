@@ -1,0 +1,7 @@
+# Sample Home Assistant sensor to update dashboard images
+sensor:
+  - platform: file
+    name: Brain Boost Timestamp
+    file_path: /srv/homeassistant/www/daily_images/current_timestamp.txt
+    value_template: "{{ value }}"
+    scan_interval: 30
