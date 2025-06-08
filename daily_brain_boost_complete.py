@@ -35,6 +35,9 @@ TODAY_STR = datetime.now().strftime("%Y%m%d")
 TIMESTAMP = str(int(time.time()))  # Unique timestamp for this run
 
 # --- LOGGING ---
+# Ensure log directories exist before configuring logging
+LOGFILE.parent.mkdir(parents=True, exist_ok=True)
+HISTORY_FILE.parent.mkdir(parents=True, exist_ok=True)
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s %(levelname)s %(message)s",
