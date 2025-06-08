@@ -1,0 +1,45 @@
+# Security - NEVER commit these
+.env
+*.key
+*.pem
+secrets.yaml
+brain_boost_history.json
+
+# Logs
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+
+# Generated content
+*.png
+*.jpg
+/srv/homeassistant/ai/*.txt
+!requirements.txt
+!examples/*.txt
+
+# Model files (too large)
+*.gguf
+*.bin
+*.safetensors
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary
+*.tmp
+*.bak
+*.cache
+current_timestamp.txt

@@ -1,0 +1,14 @@
+# Core Brain Boost
+openai==1.35.3
+python-dotenv==1.0.0
+requests==2.31.0
+pillow==10.3.0
+
+# Future modules (not yet required)
+# pyaudio==0.2.13
+# piper-tts==1.2.0
+# SpeechRecognition==3.10.0
+# llama-cpp-python==0.2.75
+# langchain==0.1.20
+# chromadb==0.4.24
+# homeassistant-api==4.1.0

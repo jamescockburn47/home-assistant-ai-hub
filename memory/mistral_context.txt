@@ -1,0 +1,132 @@
+
+User: 
+Assistant: 
+
+
+User: Summarise: Meeting at 10, lunch at 12, call at 15:00.
+Assistant: 
+
+
+User: Summarise: Meeting at 10, lunch at 12, call at 15:00.
+Your meeting is at 10, you'll have lunch at 12, and you have a call scheduled at 15:00. [end of text]
+
+User: Summarise these events for the week: Henry at {"date":"2025-05-31"}
+Assistant: 
+
+
+User: Summarise: Meeting at 10, lunch at 12, call at 15:00.
+
+
+
+User: Summarise: Meeting at 10, lunch at 12, call at 15:00.
+Your meeting is at 10, you'll have lunch at 12, and you have a call scheduled at 15:00. [end of text]
+
+User: Summarise these events for the week: Henry at {"date":"2025-05-31"}
+
+
+
+User: Summarise these events for the week: Henry at {"date":"2025-05-31"}
+Henry has an event on May 31, 2025. [end of text]
+
+User: Summarise these events for the week:
+
+
+
+User: Summarise these events for the week:
+There are no events listed for this week. [end of text] [end of text]
+
+User: Invent a plausible, interesting fact of the day (do not reference Wikipedia).
+
+User: Invent a unique “Word of the Day” (definition + example sentence) that is interesting and novel.
+
+User: Invent a plausible, inspirational quote for today (do not reference Wikiquote).
+
+User: Make up a plausible “History of the Day” anecdote (as if something historically significant happened today).
+
+User: Invent a funny, original joke for today.
+
+User: Invent a challenging riddle for today (include the answer at the end).
+
+User: Using only this Wikipedia article, produce a concise “Fact of the Day”:
+
+Ducci sequence &#x1f50d; &#x1f3e0; Wikipedia &#x1F3B2; Ducci sequence A Ducci sequence is a sequence of n-tuples of integers, sometimes known as "the Diffy game", because it is based on sequences. Given an n-tuple of integers ( a 1 , a 2 , . . . , a n ) {\displaystyle (a_{1},a_{2},...,a_{n})} , the next n-tuple in the sequence is formed by taking the absolute differences of neighbouring integers: ( a 1 , a 2 , . . . , a n ) â ( | a 1 â a 2 | , | a 2 â a 3 | , . . . , | a n â a 1 | ) . {\displaystyle (a_{1},a_{2},...,a_{n})ightarrow (|a_{1}-a_{2}|,|a_{2}-a_{3}|,...,|a_{n}-a_{1}|)\,.} Another way of describing this is as follows. Arrange n integers in a circle and make a new circle by taking the difference between neighbours, ignoring any minus signs; then repeat the operation. Ducci sequences are named after Enrico Ducci (1864 - 1940), the Italian mathematician who discovered in the 1930s that every such sequence eventually becomes periodic. Ducci sequences are also known as the Ducci map or the n-number game. Open problems in the study of these maps still remain. This article is issued from Wikipedia. The text is licensed under Creative Commons - Attribution - Sharealike. Additional terms may apply for the media files.
+
+
+User: Invent an interesting fact of the day (do not reference Wikipedia).
+
+User: Create a novel word of the day with definition and example sentence.
+
+User: Invent an inspirational quote of the day (do not cite real sources).
+
+User: Invent a plausible 'On this day in history' anecdote.
+
+User: Tell a fresh, family-friendly joke of the day.
+
+User: Pose an original riddle of the day and provide the answer at the end.
+
+User: Ping
+Assistant: 
+
+
+User: Summarise: Meeting at 10, lunch at 12, call at 15:00.
+
+
+
+User: Summarise: Meeting at 10, lunch at 12, call at 15:00.
+Your meeting is at 10, you'll have lunch at 12, and you have a call scheduled at 15:00. [end of text]
+
+User: Summarise these events for the week: Henry at {"date":"2025-05-31"}
+
+
+
+User: Summarise: Meeting at 10, lunch at 12, call at 15:00.
+
+
+
+User: Summarise: Meeting at 10, lunch at 12, call at 15:00.
+Your meeting is at 10, you'll have lunch at 12, and you have a call scheduled at 15:00. [end of text]
+
+User: Summarise these events for the week: Henry at {"date":"2025-05-31"}
+
+
+
+User: Summarise these events for the week: Henry at {"date":"2025-05-31"}
+Henry has an event on May 31, 2025. [end of text]
+
+User: Summarise these events for the week:
+
+
+
+User: Summarise these events for the week:
+There are no events listed for this week. [end of text] [end of text]
+
+User: Invent a plausible, interesting fact of the day (do not reference Wikipedia).
+
+User: Invent a unique “Word of the Day” (definition + example sentence) that is interesting and novel.
+
+User: Invent a plausible, inspirational quote for today (do not reference Wikiquote).
+
+User: Make up a plausible “History of the Day” anecdote (as if something historically significant happened today).
+
+User: Invent a funny, original joke for today.
+
+User: Invent a challenging riddle for today (include the answer at the end).
+
+User: Using only this Wikipedia article, produce a concise “Fact of the Day”:
+
+Ducci sequence &#x1f50d; &#x1f3e0; Wikipedia &#x1F3B2; Ducci sequence A Ducci sequence is a sequence of n-tuples of integers, sometimes known as "the Diffy game", because it is based on sequences. Given an n-tuple of integers ( a 1 , a 2 , . . . , a n ) {\displaystyle (a_{1},a_{2},...,a_{n})} , the next n-tuple in the sequence is formed by taking the absolute differences of neighbouring integers: ( a 1 , a 2 , . . . , a n ) â ( | a 1 â a 2 | , | a 2 â a 3 | , . . . , | a n â a 1 | ) . {\displaystyle (a_{1},a_{2},...,a_{n})ightarrow (|a_{1}-a_{2}|,|a_{2}-a_{3}|,...,|a_{n}-a_{1}|)\,.} Another way of describing this is as follows. Arrange n integers in a circle and make a new circle by taking the difference between neighbours, ignoring any minus signs; then repeat the operation. Ducci sequences are named after Enrico Ducci (1864 - 1940), the Italian mathematician who discovered in the 1930s that every such sequence eventually becomes periodic. Ducci sequences are also known as the Ducci map or the n-number game. Open problems in the study of these maps still remain. This article is issued from Wikipedia. The text is licensed under Creative Commons - Attribution - Sharealike. Additional terms may apply for the media files.
+
+
+User: Invent an interesting fact of the day (do not reference Wikipedia).
+
+User: Create a novel word of the day with definition and example sentence.
+
+User: Invent an inspirational quote of the day (do not cite real sources).
+
+User: Invent a plausible 'On this day in history' anecdote.
+
+User: Tell a fresh, family-friendly joke of the day.
+
+User: Pose an original riddle of the day and provide the answer at the end.
+
+User: Ping this Wikipedia article and produce a concise 'fact of the day'. [end of text]
