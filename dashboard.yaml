@@ -95,8 +95,7 @@ views:
                     cards:
                       - type: picture
                         image: >-
-                          /local/daily_images/fact.png?cachebust={{ range(1,
-                          999999) | random }}
+                          /local/daily_images/fact.png?cachebust={{ states('sensor.brain_boost_timestamp') }}
                         card_mod:
                           style: |
                             ha-card {
@@ -123,8 +122,7 @@ views:
                     cards:
                       - type: picture
                         image: >-
-                          /local/daily_images/on_this_day.png?cachebust={{
-                          range(1, 999999) | random }}
+                          /local/daily_images/on_this_day.png?cachebust={{ states('sensor.brain_boost_timestamp') }}
                         card_mod:
                           style: |
                             ha-card {
@@ -151,8 +149,7 @@ views:
                     cards:
                       - type: picture
                         image: >-
-                          /local/daily_images/quote.png?cachebust={{ range(1,
-                          999999) | random }}
+                          /local/daily_images/quote.png?cachebust={{ states('sensor.brain_boost_timestamp') }}
                         card_mod:
                           style: |
                             ha-card {
@@ -179,8 +176,7 @@ views:
                     cards:
                       - type: picture
                         image: >-
-                          /local/daily_images/poem.png?cachebust={{ range(1,
-                          999999) | random }}
+                          /local/daily_images/poem.png?cachebust={{ states('sensor.brain_boost_timestamp') }}
                         card_mod:
                           style: |
                             ha-card {
@@ -207,8 +203,7 @@ views:
                     cards:
                       - type: picture
                         image: >-
-                          /local/daily_images/history.png?cachebust={{ range(1,
-                          999999) | random }}
+                          /local/daily_images/history.png?cachebust={{ states('sensor.brain_boost_timestamp') }}
                         card_mod:
                           style: |
                             ha-card {
@@ -235,8 +230,7 @@ views:
                     cards:
                       - type: picture
                         image: >-
-                          /local/daily_images/word.png?cachebust={{ range(1,
-                          999999) | random }}
+                          /local/daily_images/word.png?cachebust={{ states('sensor.brain_boost_timestamp') }}
                         card_mod:
                           style: |
                             ha-card {
@@ -263,8 +257,7 @@ views:
                     cards:
                       - type: picture
                         image: >-
-                          /local/daily_images/riddle.png?cachebust={{ range(1,
-                          999999) | random }}
+                          /local/daily_images/riddle.png?cachebust={{ states('sensor.brain_boost_timestamp') }}
                         card_mod:
                           style: |
                             ha-card {
@@ -291,8 +284,7 @@ views:
                     cards:
                       - type: picture
                         image: >-
-                          /local/daily_images/joke.png?cachebust={{ range(1,
-                          999999) | random }}
+                          /local/daily_images/joke.png?cachebust={{ states('sensor.brain_boost_timestamp') }}
                         card_mod:
                           style: |
                             ha-card {

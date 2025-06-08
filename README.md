@@ -92,6 +92,18 @@ Everything is designed for persistent memory, offline-first operation, and conti
     * Place generated images in `/srv/homeassistant/www/daily_images/`
     * Place generated text in `/srv/homeassistant/ai/`
     * Reference these in your `dashboard.yaml` (e.g., `image: "/local/daily_images/fact.png?v=..."`)
+    * Create a file sensor so dashboards refresh when `current_timestamp.txt` changes. Example:
+
+      ```yaml
+      # examples/brain_boost_timestamp_sensor.yaml
+      sensor:
+        - platform: file
+          name: Brain Boost Timestamp
+          file_path: /srv/homeassistant/www/daily_images/current_timestamp.txt
+          value_template: "{{ value }}"
+      ```
+
+      Then use `cachebust={{ states('sensor.brain_boost_timestamp') }}` in `dashboard.yaml`.
 
 ---
 
