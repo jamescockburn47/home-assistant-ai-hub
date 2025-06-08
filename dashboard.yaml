@@ -1,0 +1,316 @@
+views:
+  - title: Home
+    path: home
+    type: panel
+    badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: vertical-stack
+            view_layout:
+              column_width: 40%
+            cards:
+              - type: markdown
+                content: |
+                  # {{ now().strftime('%H:%M') }}
+                  ### {{ now().strftime('%A, %B %d') }}
+                card_mod:
+                  style: |
+                    ha-card {
+                      text-align: center;
+                      padding: 16px !important;
+                      background: var(--card-background-color);
+                    }
+                    h1 {
+                      margin: 0 !important;
+                      font-size: 5em !important;
+                      font-weight: 200;
+                      color: var(--primary-color);
+                      line-height: 0.9;
+                    }
+                    h3 {
+                      margin: 8px 0 0 0 !important;
+                      font-weight: normal;
+                      opacity: 0.8;
+                      font-size: 1.2em;
+                    }
+              - type: weather-forecast
+                entity: weather.forecast_home
+                show_current: true
+                show_forecast: true
+                forecast_type: daily
+                number_of_forecasts: 7
+                card_mod:
+                  style: |
+                    ha-card {
+                      padding: 8px !important;
+                    }
+                    .forecast {
+                      font-size: 0.7em !important;
+                    }
+                    .current {
+                      font-size: 0.85em !important;
+                    }
+              - type: calendar
+                initial_view: listWeek
+                entities:
+                  - calendar.family
+                  - calendar.james_a_cockburn_gmail_com
+                title: Calendar
+                card_mod:
+                  style: |
+                    ha-card {
+                      max-height: calc(100vh - 450px) !important;
+                      overflow-y: auto !important;
+                    }
+                    .fc-list-table {
+                      font-size: 0.8em !important;
+                    }
+                    .fc-list-day-cushion {
+                      padding: 2px 4px !important;
+                    }
+                    .fc-list-event {
+                      padding: 2px 4px !important;
+                    }
+          - type: vertical-stack
+            view_layout:
+              column_width: 60%
+            cards:
+              - type: markdown
+                content: '### Daily Brain Boost'
+                card_mod:
+                  style: |
+                    ha-card {
+                      padding: 4px 16px !important;
+                      margin: 0 !important;
+                      background: transparent !important;
+                      box-shadow: none !important;
+                    }
+              - type: grid
+                columns: 2
+                square: false
+                cards:
+                  - type: custom:stack-in-card
+                    mode: horizontal
+                    cards:
+                      - type: picture
+                        image: >-
+                          /local/daily_images/fact.png?cachebust={{ range(1,
+                          999999) | random }}
+                        card_mod:
+                          style: |
+                            ha-card {
+                              width: 35px !important;
+                              min-width: 35px !important;
+                              height: 35px !important;
+                              margin: 0 !important;
+                              padding: 0 !important;
+                            }
+                      - type: markdown
+                        content: |
+                          **Fact**
+                          {{ states('sensor.daily_fact') }}
+                        card_mod:
+                          style: |
+                            ha-card {
+                              font-size: 0.7em;
+                              padding: 2px 4px !important;
+                              margin: 0 !important;
+                              line-height: 1.1;
+                            }
+                  - type: custom:stack-in-card
+                    mode: horizontal
+                    cards:
+                      - type: picture
+                        image: >-
+                          /local/daily_images/on_this_day.png?cachebust={{
+                          range(1, 999999) | random }}
+                        card_mod:
+                          style: |
+                            ha-card {
+                              width: 35px !important;
+                              min-width: 35px !important;
+                              height: 35px !important;
+                              margin: 0 !important;
+                              padding: 0 !important;
+                            }
+                      - type: markdown
+                        content: |
+                          **On This Day**
+                          {{ states('sensor.daily_on_this_day') }}
+                        card_mod:
+                          style: |
+                            ha-card {
+                              font-size: 0.7em;
+                              padding: 2px 4px !important;
+                              margin: 0 !important;
+                              line-height: 1.1;
+                            }
+                  - type: custom:stack-in-card
+                    mode: horizontal
+                    cards:
+                      - type: picture
+                        image: >-
+                          /local/daily_images/quote.png?cachebust={{ range(1,
+                          999999) | random }}
+                        card_mod:
+                          style: |
+                            ha-card {
+                              width: 35px !important;
+                              min-width: 35px !important;
+                              height: 35px !important;
+                              margin: 0 !important;
+                              padding: 0 !important;
+                            }
+                      - type: markdown
+                        content: |
+                          **Quote**
+                          {{ states('sensor.daily_quote') }}
+                        card_mod:
+                          style: |
+                            ha-card {
+                              font-size: 0.7em;
+                              padding: 2px 4px !important;
+                              margin: 0 !important;
+                              line-height: 1.1;
+                            }
+                  - type: custom:stack-in-card
+                    mode: horizontal
+                    cards:
+                      - type: picture
+                        image: >-
+                          /local/daily_images/poem.png?cachebust={{ range(1,
+                          999999) | random }}
+                        card_mod:
+                          style: |
+                            ha-card {
+                              width: 35px !important;
+                              min-width: 35px !important;
+                              height: 35px !important;
+                              margin: 0 !important;
+                              padding: 0 !important;
+                            }
+                      - type: markdown
+                        content: |
+                          **Poem**
+                          {{ states('sensor.daily_poem') }}
+                        card_mod:
+                          style: |
+                            ha-card {
+                              font-size: 0.7em;
+                              padding: 2px 4px !important;
+                              margin: 0 !important;
+                              line-height: 1.1;
+                            }
+                  - type: custom:stack-in-card
+                    mode: horizontal
+                    cards:
+                      - type: picture
+                        image: >-
+                          /local/daily_images/history.png?cachebust={{ range(1,
+                          999999) | random }}
+                        card_mod:
+                          style: |
+                            ha-card {
+                              width: 35px !important;
+                              min-width: 35px !important;
+                              height: 35px !important;
+                              margin: 0 !important;
+                              padding: 0 !important;
+                            }
+                      - type: markdown
+                        content: |
+                          **History**
+                          {{ states('sensor.daily_history') }}
+                        card_mod:
+                          style: |
+                            ha-card {
+                              font-size: 0.7em;
+                              padding: 2px 4px !important;
+                              margin: 0 !important;
+                              line-height: 1.1;
+                            }
+                  - type: custom:stack-in-card
+                    mode: horizontal
+                    cards:
+                      - type: picture
+                        image: >-
+                          /local/daily_images/word.png?cachebust={{ range(1,
+                          999999) | random }}
+                        card_mod:
+                          style: |
+                            ha-card {
+                              width: 35px !important;
+                              min-width: 35px !important;
+                              height: 35px !important;
+                              margin: 0 !important;
+                              padding: 0 !important;
+                            }
+                      - type: markdown
+                        content: |
+                          **Word**
+                          {{ states('sensor.daily_word') }}
+                        card_mod:
+                          style: |
+                            ha-card {
+                              font-size: 0.7em;
+                              padding: 2px 4px !important;
+                              margin: 0 !important;
+                              line-height: 1.1;
+                            }
+                  - type: custom:stack-in-card
+                    mode: horizontal
+                    cards:
+                      - type: picture
+                        image: >-
+                          /local/daily_images/riddle.png?cachebust={{ range(1,
+                          999999) | random }}
+                        card_mod:
+                          style: |
+                            ha-card {
+                              width: 35px !important;
+                              min-width: 35px !important;
+                              height: 35px !important;
+                              margin: 0 !important;
+                              padding: 0 !important;
+                            }
+                      - type: markdown
+                        content: |
+                          **Riddle**
+                          {{ states('sensor.daily_riddle') }}
+                        card_mod:
+                          style: |
+                            ha-card {
+                              font-size: 0.7em;
+                              padding: 2px 4px !important;
+                              margin: 0 !important;
+                              line-height: 1.1;
+                            }
+                  - type: custom:stack-in-card
+                    mode: horizontal
+                    cards:
+                      - type: picture
+                        image: >-
+                          /local/daily_images/joke.png?cachebust={{ range(1,
+                          999999) | random }}
+                        card_mod:
+                          style: |
+                            ha-card {
+                              width: 35px !important;
+                              min-width: 35px !important;
+                              height: 35px !important;
+                              margin: 0 !important;
+                              padding: 0 !important;
+                            }
+                      - type: markdown
+                        content: |
+                          **Joke**
+                          {{ states('sensor.daily_joke') }}
+                        card_mod:
+                          style: |
+                            ha-card {
+                              font-size: 0.7em;
+                              padding: 2px 4px !important;
+                              margin: 0 !important;
+                              line-height: 1.1;
+                            }
