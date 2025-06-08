@@ -76,7 +76,11 @@ Everything is designed for persistent memory, offline-first operation, and conti
     ```bash
     cp .env.example .env
     # Edit .env and add your OpenAI API key
+    # Optional: add HA_TOKEN for Home Assistant scripts
     ```
+
+    The `add_event.sh` helper script will read `HA_TOKEN` from this file
+    or your environment when adding calendar entries.
 
 4.  **Run the script:**
     ```bash

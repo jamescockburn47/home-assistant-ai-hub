@@ -1,5 +1,7 @@
 # Security - NEVER commit these
+# Ignore .env files anywhere in the repository
 .env
+**/.env
 *.key
 *.pem
 secrets.yaml
