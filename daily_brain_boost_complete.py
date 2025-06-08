@@ -35,6 +35,7 @@ TODAY_STR = datetime.now().strftime("%Y%m%d")
 TIMESTAMP = str(int(time.time()))  # Unique timestamp for this run
 
 # --- LOGGING ---
+LOGFILE.parent.mkdir(parents=True, exist_ok=True)
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s %(levelname)s %(message)s",
@@ -270,7 +271,9 @@ def gpt_image(prompt, filename):
         return True
         
     except Exception as e:
-        log.error(f"Image generation failed for {filename}: {e}")
+        log.exception(
+            "Image generation failed for %s. Prompt: %s", filename, prompt
+        )
         return False
 
 def fetch_joke():
@@ -371,7 +374,11 @@ def main():
             if content and "[GENERATION FAILED]" not in content:
                 image_name = filename.replace('.txt', '.png')
                 if filename != "word.txt":  # Word already handled
-                    gpt_image(content, image_name)
+                    success = gpt_image(content, image_name)
+                    if success is False:
+                        log.warning(
+                            f"Image generation failed for {image_name}" 
+                        )
     
     # Update history
     for filename, content in generated_content.items():

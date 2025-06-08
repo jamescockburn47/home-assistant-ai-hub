@@ -154,6 +154,9 @@ See `docs/PI_SETUP.md` for full hardware, Docker, directory, and environment det
     * (Re)activate `venv`, re-run `pip install -r requirements.txt`
 * **.env not found?**
     * Check permissions and location in `/media/pi/data/assistant/`
+* **Image errors?**
+    * Inspect `brain_boost.log` for `WARNING` lines about failed image generation
+    * `grep 'Image generation failed' /media/pi/data/assistant/brain_boost.log`
 * **Still stuck?**
     * See `docs/` or open an issue
 
