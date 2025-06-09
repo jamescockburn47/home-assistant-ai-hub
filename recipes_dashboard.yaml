@@ -1,0 +1,37 @@
+views:
+  - title: Recipes
+    path: recipes
+    type: panel
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: markdown
+            content: |
+              ## Recipe Finder
+              Enter ingredients and tap Search.
+          - type: grid
+            columns: 1
+            square: false
+            cards:
+              - type: entity
+                entity: input_text.recipe_ingredients
+                name: Ingredients
+              - type: button
+                name: Search Recipes
+                show_state: false
+                tap_action:
+                  action: call-service
+                  service: shell_command.run_recipe_finder
+              - type: markdown
+                content: |
+                  {{ states('sensor.recipe_options') }}
+              - type: markdown
+                content: |
+                  {{ states('sensor.selected_recipe') }}
+                card_mod:
+                  style: |
+                    ha-card {
+                      font-size: 2em;
+                      text-align: center;
+                    }

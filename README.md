@@ -33,6 +33,7 @@ Everything is designed for persistent memory, offline-first operation, and conti
 - **Budget Agent**: Designed, not implemented
 - **3D Print Automation**: Infrastructure in progress
 - **Document OCR**: Scripts and pipeline designed
+- **Recipe Suggestions Page**: GPT-based recipe ideas and selection
 
 ---
 
@@ -50,6 +51,7 @@ Everything is designed for persistent memory, offline-first operation, and conti
 ├── voice/                           # Voice assistant scripts
 ├── llm/                             # Local LLM configs
 ├── calendar/                        # Calendar integration
+├── recipes/                         # Recipe finder module
 ├── ai/                              # (Text output, ignored by git)
 ├── venv/                            # Python virtualenv, not tracked
 └── ... (other modules)
@@ -132,6 +134,7 @@ Everything is designed for persistent memory, offline-first operation, and conti
 | Calendar Integration   | ✅ Working | Voice add planned                      |
 | Knowledge Base (RAG)   | 🟡 Partial | Kiwix server running                   |
 | Budget Agent           | 🟡 Designed | Not yet implemented                    |
+| Recipe Suggestions     | 🆕 Experimental | GPT-based suggestions dashboard  |
 | 3D Print Automation    | 🟡 Planned | Infrastructure set                     |
 | OCR Pipeline           | 🟡 Designed | Scripts drafted                        |
 
@@ -254,7 +257,7 @@ Personal/family/educational use only.
 Contact owner for commercial or multi-user licensing.
 
 ---
-*Last updated: 2025-06-08*
+*Last updated: 2025-06-09*
 *Maintainer: James Cockburn*
 
 **Building the future of home intelligence, one module at a time.**
