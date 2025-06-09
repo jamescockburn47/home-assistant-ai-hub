@@ -1,0 +1,109 @@
+# Input helpers
+input_text:
+  recipe_ingredients:
+    name: Recipe Ingredients
+    max: 200
+  recipe_preferences:
+    name: Recipe Preferences
+    max: 100
+
+input_select:
+  recipe_dietary:
+    name: Dietary Restrictions
+    options:
+      - none
+      - vegetarian
+      - vegan
+      - gluten-free
+      - dairy-free
+      - keto
+      - paleo
+    initial: none
+
+# File sensors
+sensor:
+  - platform: file
+    name: recipe_options
+    file_path: /srv/homeassistant/ai/recipe_options.txt
+    scan_interval: 5
+
+  - platform: file
+    name: selected_recipe
+    file_path: /srv/homeassistant/ai/selected_recipe.txt
+    scan_interval: 5
+
+  - platform: template
+    sensors:
+      selected_recipe_title:
+        friendly_name: "Selected Recipe Title"
+        value_template: >-
+          {% set recipe = states('sensor.selected_recipe') | from_json %}
+          {{ recipe.title if recipe != 'unknown' else 'No recipe selected' }}
+
+      selected_recipe_time:
+        friendly_name: "Cooking Time"
+        value_template: >-
+          {% set recipe = states('sensor.selected_recipe') | from_json %}
+          {{ recipe.cooking_time if recipe != 'unknown' else 'N/A' }}
+
+      selected_recipe_difficulty:
+        friendly_name: "Difficulty"
+        value_template: >-
+          {% set recipe = states('sensor.selected_recipe') | from_json %}
+          {{ recipe.difficulty if recipe != 'unknown' else 'N/A' }}
+
+      selected_recipe_category:
+        friendly_name: "Category"
+        value_template: >-
+          {% set recipe = states('sensor.selected_recipe') | from_json %}
+          {{ recipe.category if recipe != 'unknown' else 'N/A' }}
+
+      selected_recipe_ingredients:
+        friendly_name: "Ingredients"
+        value_template: >-
+          {% set recipe = states('sensor.selected_recipe') | from_json %}
+          {% if recipe != 'unknown' %}
+            {% for ingredient in recipe.ingredients %}
+            - {{ ingredient }}
+            {% endfor %}
+          {% else %}
+            No ingredients available
+          {% endif %}
+
+      selected_recipe_instructions:
+        friendly_name: "Instructions"
+        value_template: >-
+          {% set recipe = states('sensor.selected_recipe') | from_json %}
+          {% if recipe != 'unknown' %}
+            {% for step in recipe.instructions %}
+            {{ loop.index }}. {{ step }}
+            {% endfor %}
+          {% else %}
+            No instructions available
+          {% endif %}
+
+      selected_recipe_rating:
+        friendly_name: "Rating"
+        value_template: >-
+          {% set recipe = states('sensor.selected_recipe') | from_json %}
+          {{ recipe.rating if recipe != 'unknown' and recipe.rating else 'Not rated' }}
+
+      recipe_history:
+        friendly_name: "Recipe History"
+        value_template: >-
+          {% set history = states('sensor.recipe_history') | from_json %}
+          {% if history != 'unknown' %}
+            {% for recipe in history[-5:] %}
+            - {{ recipe.title }} ({{ recipe.date_added.split('T')[0] }})
+            {% endfor %}
+          {% else %}
+            No recipe history available
+          {% endif %}
+
+# Shell command to run the recipe finder
+shell_command:
+  run_recipe_finder: >
+    python3 /srv/homeassistant/ai/recipes/recipe_finder.py 
+    "{{ states('input_text.recipe_ingredients') }}"
+    --dietary "{{ states('input_select.recipe_dietary') }}"
+    --preferences "{{ states('input_text.recipe_preferences') }}" 

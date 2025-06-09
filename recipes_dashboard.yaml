@@ -17,6 +17,12 @@ views:
               - type: entity
                 entity: input_text.recipe_ingredients
                 name: Ingredients
+              - type: select
+                entity: input_select.recipe_dietary
+                name: Dietary Restrictions
+              - type: entity
+                entity: input_text.recipe_preferences
+                name: Additional Preferences
               - type: button
                 name: Search Recipes
                 show_state: false
@@ -26,12 +32,59 @@ views:
               - type: markdown
                 content: |
                   {{ states('sensor.recipe_options') }}
-              - type: markdown
-                content: |
-                  {{ states('sensor.selected_recipe') }}
                 card_mod:
                   style: |
                     ha-card {
-                      font-size: 2em;
-                      text-align: center;
+                      padding: 16px;
+                    }
+              - type: custom:mushroom-template-card
+                primary: Selected Recipe
+                secondary: "{{ states('sensor.selected_recipe_title') }}"
+                icon: mdi:food
+                fill_container: true
+                tap_action:
+                  action: more-info
+                  entity: sensor.selected_recipe
+              - type: custom:mushroom-template-card
+                primary: Cooking Time
+                secondary: "{{ states('sensor.selected_recipe_time') }}"
+                icon: mdi:clock-outline
+              - type: custom:mushroom-template-card
+                primary: Difficulty
+                secondary: "{{ states('sensor.selected_recipe_difficulty') }}"
+                icon: mdi:gauge
+              - type: custom:mushroom-template-card
+                primary: Category
+                secondary: "{{ states('sensor.selected_recipe_category') }}"
+                icon: mdi:tag
+              - type: markdown
+                content: |
+                  ### Ingredients
+                  {{ states('sensor.selected_recipe_ingredients') }}
+                card_mod:
+                  style: |
+                    ha-card {
+                      padding: 16px;
+                    }
+              - type: markdown
+                content: |
+                  ### Instructions
+                  {{ states('sensor.selected_recipe_instructions') }}
+                card_mod:
+                  style: |
+                    ha-card {
+                      padding: 16px;
+                    }
+              - type: custom:mushroom-template-card
+                primary: Rating
+                secondary: "{{ states('sensor.selected_recipe_rating') }} ⭐"
+                icon: mdi:star
+              - type: markdown
+                content: |
+                  ### Recent Recipes
+                  {{ states('sensor.recipe_history') }}
+                card_mod:
+                  style: |
+                    ha-card {
+                      padding: 16px;
                     }
